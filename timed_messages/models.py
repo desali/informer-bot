@@ -14,7 +14,7 @@ class TimedMessage(models.Model):
     )
 
     message = models.OneToOneField(Message, on_delete=models.CASCADE)
-    date = models.DateTimeField(default=timezone.now())
+    date = models.DateTimeField(default=timezone.now)
     timing = models.ForeignKey(Timing, on_delete=models.DO_NOTHING)
     status = models.IntegerField(choices=STATUS, default=1)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='timed_messages')

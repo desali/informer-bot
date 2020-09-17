@@ -1,4 +1,5 @@
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import PermissionsMixin
 from django.db import models
 
 from projects.models import Project
@@ -30,9 +31,11 @@ class AdminManager(BaseUserManager):
         return self.get(username=username)
 
 
-class Admin(AbstractBaseUser):
+class Admin(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=100, unique=True)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='admins')
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='admins', null=True, blank=True)
+    is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = []
@@ -40,4 +43,4 @@ class Admin(AbstractBaseUser):
     objects = AdminManager()
 
     def __str__(self):
-        return str(self.chat_id)
+        return str(self.username)
