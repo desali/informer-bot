@@ -14,4 +14,4 @@ class InstantMessage(models.Model):
         return str(self.message)
 
     class Meta:
-        db_table = "messages_instant_message"
+        db_table = "instant_messages_instant_message"

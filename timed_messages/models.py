@@ -23,4 +23,4 @@ class TimedMessage(models.Model):
         return str(self.message)
 
     class Meta:
-        db_table = "messages_timed_message"
+        db_table = "timed_messages_timed_message"

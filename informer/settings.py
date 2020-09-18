@@ -46,10 +46,11 @@ INSTALLED_APPS = [
     'clients',
     'core',
     'lessons',
+    'daily_lessons',
     'projects',
     'tmessages',
     'timed_messages',
-    'instant_messages'
+    'instant_messages',
 ]
 
 MIDDLEWARE = [

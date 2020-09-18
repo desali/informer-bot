@@ -24,6 +24,7 @@ urlpatterns = [
     path('core/', include('core.urls')),
     path('instant_message/', include('instant_messages.urls')),
     path('lesson/', include('lessons.urls')),
+    path('daily_lesson/', include('daily_lessons.urls')),
     path('project/', include('projects.urls')),
     path('timed_message/', include('timed_messages.urls')),
     path('message/', include('tmessages.urls')),

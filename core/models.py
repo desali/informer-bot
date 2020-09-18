@@ -7,3 +7,11 @@ class Timing(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Hour(models.Model):
+    title = models.CharField(max_length=200)
+    hour = models.IntegerField()
+
+    def __str__(self):
+        return self.title
