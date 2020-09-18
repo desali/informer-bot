@@ -1,0 +1,40 @@
+{% extends "informer/index.html" %}
+{% load static %}
+
+{% block main_content %}
+    <div class="lesson-list-page container h-100 d-flex flex-column align-items-center p-4">
+        <h2 class="title mb-4">
+            Запланированные уроки
+        </h2>
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Название</th>
+              <th scope="col">Дата</th>
+              <th scope="col">Статус</th>
+              <th scope="col">Сообщение</th>
+              <th scope="col">Зап. сообщения</th>
+              <th scope="col">Редактировать</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for lesson in lessons %}
+                <tr>
+                  <th scope="row">{{ lesson.id }}</th>
+                  <td>{{ lesson.title }}</td>
+                  <td>{{ lesson.date }}</td>
+                  <td>{{ lesson.status }}</td>
+{#                  <td><a href="{% url 'message-detail' id=lesson.message %}">Посмотреть</a></td>#}
+                  <td><a href="">Посмотреть</a></td>
+{#                  <td><a href="{% url 'timed-message-list' id=lesson.id %}">Посмотреть</a></td>#}
+                    <td><a href="">Посмотреть</a></td>
+{#                    <td><a href="{% url 'lesson-edit' id=lesson.id %}">Редактировать</a></td>#}
+                    <td><a href="">Редактировать</a></td>
+                </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+{% endblock %}

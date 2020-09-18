@@ -17,7 +17,7 @@ class DailyLesson(models.Model):
     hour = models.ForeignKey(Hour, on_delete=models.DO_NOTHING)
     message = models.OneToOneField(Message, on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS, default=1)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='lessons')
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='daily_lessons')
 
     def __str__(self):
         return self.title

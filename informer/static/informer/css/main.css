@@ -1,0 +1,32 @@
+/* !INFORMER INDEX */
+.main-content {
+    height: calc(100vh - 56px);
+}
+/* INFORMER INDEX! */
+
+/* !AUTHORIZATION LOGIN */
+.login-form {
+    width: 80%;
+    /*max-height: 400px;*/
+    padding: 30px 40px;
+    border: 1px solid #ececec;
+}
+/* AUTHORIZATION LOGIN! */
+
+/* !PROJECTS HOME */
+.home-page .title {
+    margin-bottom: 2rem;
+}
+
+.messages .message-card {
+
+}
+
+.message-card .image {
+
+}
+
+.message-card .show-button {
+    width: 100%;
+}
+/* PROJECTS HOME! */
