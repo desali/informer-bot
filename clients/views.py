@@ -17,5 +17,5 @@ class ClientListView(LoginRequiredMixin, View):
         clients_data = ClientListSerializer(clients, many=True).data
 
         return render(request, self.template_name, {
-            'lessons': clients_data
+            'clients': clients_data
         })

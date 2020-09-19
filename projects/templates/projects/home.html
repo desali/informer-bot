@@ -78,7 +78,7 @@
           <h5 class="card-title">Немедленные сообщения</h5>
           <p class="card-text">Количество: {{ project.instant_messages }}.</p>
         </div>
-        <a href="#" class="btn btn-secondary show-button m-0">Посмотреть</a>
+        <a href="{% url 'instant-message-list' %}" class="btn btn-secondary show-button m-0">Посмотреть</a>
       </div>
       <div class="card client-card" style="min-width: 300px;max-width: 460px;">
         <div class="card-body">
