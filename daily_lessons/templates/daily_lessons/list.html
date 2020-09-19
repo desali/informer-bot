@@ -1,0 +1,48 @@
+{% extends "informer/index.html" %}
+{% load static %}
+
+{% block main_content %}
+  <div class="daily-lesson-list-page container h-100 d-flex flex-column align-items-center p-4">
+    <h2 class="title mb-4">
+      Ежедневные уроки
+    </h2>
+
+    <div class="w-100 d-flex justify-content-between mb-3">
+      <a class="btn btn-secondary" href="{% url 'home' %}">Назад</a>
+      <a class="btn btn-primary" href="{% url 'daily-lesson-create' %}">Создать</a>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Название</th>
+        <th scope="col">День</th>
+        <th scope="col">Час</th>
+        <th scope="col">Статус</th>
+        <th scope="col">Сообщение</th>
+        <th scope="col">Зап. сообщения</th>
+        <th scope="col">Редактировать</th>
+        <th scope="col">Удалить</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for daily_lesson in daily_lessons %}
+        <tr>
+          <th scope="row">{{ daily_lesson.id }}</th>
+          <td>{{ daily_lesson.title }}</td>
+          <td>{{ daily_lesson.day }}</td>
+          <td>{{ daily_lesson.hour }}</td>
+          <td>{{ daily_lesson.status }}</td>
+          {#                  <td><a href="{% url 'message-detail' id=daily_lesson.message %}">Посмотреть</a></td>#}
+          <td><a href="">Посмотреть</a></td>
+          {#                  <td><a href="{% url 'timed-message-list' id=daily_lesson.id %}">Посмотреть</a></td>#}
+          <td><a href="">Посмотреть</a></td>
+          <td><a href="{% url 'daily-lesson-update' id=daily_lesson.id %}">Редактировать</a></td>
+          <td><a href="{% url 'daily-lesson-delete' id=daily_lesson.id %}">Удалить</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

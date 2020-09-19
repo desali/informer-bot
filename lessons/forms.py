@@ -1,9 +1,16 @@
 from django import forms
+from django.forms import ModelForm
 
-from admins.models import Admin
 from lessons.models import Lesson
 
 
-class LessonEditForm(forms.Form):
-    model = Lesson
-    fields = ['title', 'date']
+class LessonCreateForm(ModelForm):
+    class Meta:
+        model = Lesson
+        fields = ['title', 'date', 'project']
+
+
+class LessonEditForm(ModelForm):
+    class Meta:
+        model = Lesson
+        fields = ['title', 'date']

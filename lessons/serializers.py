@@ -9,3 +9,15 @@ class LessonListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lesson
         fields = ['id', 'title', 'date', 'status', 'message']
+
+
+class LessonCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Lesson
+        fields = ['title', 'date']
+
+
+class LessonEditSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Lesson
+        fields = ['title', 'date']

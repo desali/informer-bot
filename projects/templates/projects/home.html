@@ -2,89 +2,91 @@
 {% load static %}
 
 {% block main_content %}
-    <div class="home-page container h-100 d-flex flex-column align-items-center p-4">
-        <h2 class="title">
-            <span class="font-weight-normal">Проект:</span> {{ project.title }}
-        </h2>
+  <div class="home-page container h-100 d-flex flex-column align-items-center p-4">
+    <h2 class="title">
+      <span class="font-weight-normal">Проект:</span> {{ project.title }}
+    </h2>
 
-        <h4 class="w-100 text-left mb-3">Сообщения:</h4>
+    <h4 class="w-100 text-left mb-3">Сообщения:</h4>
 
-        <div class="messages w-100 d-flex align-items-start flex-wrap">
-            <div class="card message-card mb-3 mr-3" style="max-width: 460px;">
-                <div class="row no-gutters">
-                    <div class="col-md-5">
-                      <img src="{% static 'informer/images/no-image.png' %}" class="card-img" alt="">
-                    </div>
-                    <div class="col-md-7">
-                      <div class="card-body">
-                        <h5 class="card-title">Сообщение приветствие</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><a href="{{ project.welcome_message }}" class="btn btn-primary">Ссылка</a></p>
-                      </div>
-                    </div>
-                </div>
-                <div class="row no-gutters">
-                    <a href="" class="btn btn-secondary show-button m-0">Редактировать</a>
-                </div>
+    <div class="messages w-100 d-flex align-items-start flex-wrap">
+      <div class="card message-card mb-3 mr-3" style="max-width: 460px;">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            <img src="{% static 'informer/images/no-image.png' %}" class="card-img" alt="">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h5 class="card-title">Сообщение приветствие</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <p class="card-text"><a href="{{ project.welcome_message }}" class="btn btn-primary">Ссылка</a></p>
             </div>
-
-            <div class="card message-card mb-3" style="max-width: 460px;">
-              <div class="row no-gutters">
-                <div class="col-md-5">
-                  <img src="{% static 'informer/images/no-image.png' %}" class="card-img" alt="">
-                </div>
-                <div class="col-md-7">
-                  <div class="card-body">
-                    <h5 class="card-title">Сообщение подтверждение</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><a href="{{ project.confirm_message }}" class="btn btn-primary">Ссылка</a></p>
-                  </div>
-                </div>
-              </div>
-                <div class="row no-gutters">
-                    <a href="" class="btn btn-secondary show-button m-0">Редактировать</a>
-                </div>
-            </div>
+          </div>
         </div>
-
-
-        <h4 class="w-100 text-left mt-4 mb-3">Уроки:</h4>
-
-        <div class="lessons w-100 d-flex align-items-start flex-wrap">
-            <div class="card lesson-card mr-3 mb-3" style="min-width: 300px;max-width: 460px;">
-                <div class="card-body">
-                    <h5 class="card-title">Запланированные уроки</h5>
-                    <p class="card-text">Количество: {{ project.lessons }}.</p>
-                </div>
-                <a href="{% url 'lesson-list' %}" class="btn btn-secondary show-button m-0">Посмотреть</a>
-            </div>
-            <div class="card lesson-card" style="min-width: 300px;max-width: 460px;">
-                <div class="card-body">
-                    <h5 class="card-title">Ежедневные уроки</h5>
-                    <p class="card-text">Количество: {{ project.daily_lessons }}.</p>
-                </div>
-                <a href="#" class="btn btn-secondary show-button m-0">Посмотреть</a>
-            </div>
+        <div class="row no-gutters">
+          <a href="" class="btn btn-secondary show-button m-0">Редактировать</a>
         </div>
+      </div>
 
-
-        <h4 class="w-100 text-left mt-4 mb-3">Дополнительно:</h4>
-
-        <div class="extra-info w-100 d-flex align-items-start flex-wrap mb-5">
-            <div class="card instant-message-card mr-3 mb-3" style="min-width: 300px;max-width: 460px;">
-                <div class="card-body">
-                    <h5 class="card-title">Немедленные сообщения</h5>
-                    <p class="card-text">Количество: {{ project.instant_messages }}.</p>
-                </div>
-                <a href="#" class="btn btn-secondary show-button m-0">Посмотреть</a>
+      <div class="card message-card mb-3" style="max-width: 460px;">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            <img src="{% static 'informer/images/no-image.png' %}" class="card-img" alt="">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h5 class="card-title">Сообщение подтверждение</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <p class="card-text"><a href="{{ project.confirm_message }}" class="btn btn-primary">Ссылка</a></p>
             </div>
-            <div class="card client-card" style="min-width: 300px;max-width: 460px;">
-                <div class="card-body">
-                    <h5 class="card-title">Клиенты</h5>
-                    <p class="card-text">Количество: {{ project.clients }}.</p>
-                </div>
-                <a href="#" class="btn btn-secondary show-button m-0">Посмотреть</a>
-            </div>
+          </div>
         </div>
+        <div class="row no-gutters">
+          <a href="" class="btn btn-secondary show-button m-0">Редактировать</a>
+        </div>
+      </div>
     </div>
+
+
+    <h4 class="w-100 text-left mt-4 mb-3">Уроки:</h4>
+
+    <div class="lessons w-100 d-flex align-items-start flex-wrap">
+      <div class="card lesson-card mr-3 mb-3" style="min-width: 300px;max-width: 460px;">
+        <div class="card-body">
+          <h5 class="card-title">Запланированные уроки</h5>
+          <p class="card-text">Количество: {{ project.lessons }}.</p>
+        </div>
+        <a href="{% url 'lesson-list' %}" class="btn btn-secondary show-button m-0">Посмотреть</a>
+      </div>
+      <div class="card lesson-card" style="min-width: 300px;max-width: 460px;">
+        <div class="card-body">
+          <h5 class="card-title">Ежедневные уроки</h5>
+          <p class="card-text">Количество: {{ project.daily_lessons }}.</p>
+        </div>
+        <a href="{% url 'daily-lesson-list' %}" class="btn btn-secondary show-button m-0">Посмотреть</a>
+      </div>
+    </div>
+
+
+    <h4 class="w-100 text-left mt-4 mb-3">Дополнительно:</h4>
+
+    <div class="extra-info w-100 d-flex align-items-start flex-wrap mb-5">
+      <div class="card instant-message-card mr-3 mb-3" style="min-width: 300px;max-width: 460px;">
+        <div class="card-body">
+          <h5 class="card-title">Немедленные сообщения</h5>
+          <p class="card-text">Количество: {{ project.instant_messages }}.</p>
+        </div>
+        <a href="#" class="btn btn-secondary show-button m-0">Посмотреть</a>
+      </div>
+      <div class="card client-card" style="min-width: 300px;max-width: 460px;">
+        <div class="card-body">
+          <h5 class="card-title">Клиенты</h5>
+          <p class="card-text">Количество: {{ project.clients }}.</p>
+        </div>
+        <a href="{% url 'client-list' %}" class="btn btn-secondary show-button m-0">Посмотреть</a>
+      </div>
+    </div>
+  </div>
 {% endblock %}

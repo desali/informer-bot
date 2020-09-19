@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 from core.models import Timing
+from daily_lessons.models import DailyLesson
 from lessons.models import Lesson
 from tmessages.models import Message
 
@@ -17,7 +18,11 @@ class TimedMessage(models.Model):
     date = models.DateTimeField(default=timezone.now)
     timing = models.ForeignKey(Timing, on_delete=models.DO_NOTHING)
     status = models.IntegerField(choices=STATUS, default=1)
-    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='timed_messages')
+
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='timed_messages',
+                               null=True, blank=True)
+    daily_lesson = models.ForeignKey(DailyLesson, on_delete=models.CASCADE, related_name='timed_messages',
+                                     null=True, blank=True)
 
     def __str__(self):
         return str(self.message)

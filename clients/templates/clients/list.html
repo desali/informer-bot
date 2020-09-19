@@ -1,0 +1,33 @@
+{% extends "informer/index.html" %}
+{% load static %}
+
+{% block main_content %}
+  <div class="client-list-page container h-100 d-flex flex-column align-items-center p-4">
+    <h2 class="title mb-4">
+      Клиенты
+    </h2>
+
+    <div class="w-100 d-flex justify-content-between mb-3">
+      <a class="btn btn-secondary" href="{% url 'home' %}">Назад</a>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Телефон</th>
+        <th scope="col">Статус</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for client in lessons %}
+        <tr>
+          <th scope="row">{{ client.id }}</th>
+          <td>{{ client.phone }}</td>
+          <td>{{ client.status }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

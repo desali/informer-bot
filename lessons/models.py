@@ -13,8 +13,8 @@ class Lesson(models.Model):
     )
 
     title = models.CharField(max_length=200)
-    date = models.DateTimeField()
-    message = models.OneToOneField(Message, on_delete=models.CASCADE)
+    date = models.DateField()
+    message = models.OneToOneField(Message, on_delete=models.CASCADE, null=True, blank=True)
     status = models.IntegerField(choices=STATUS, default=1)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='lessons')
 

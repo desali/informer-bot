@@ -4,7 +4,6 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('timed_messages', '0003_auto_20200918_0056'),
     ]
