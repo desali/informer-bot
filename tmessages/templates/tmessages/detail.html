@@ -2,33 +2,46 @@
 {% load static %}
 
 {% block main_content %}
-  <div class="instant-message-list-page container h-100 d-flex flex-column align-items-center p-4">
+  <div class="message-detail-page container h-100 d-flex flex-column align-items-center p-4">
     <h2 class="title mb-4">
-      Немедленные сообщения
+      Сообщение
     </h2>
 
     <div class="w-100 d-flex justify-content-between mb-3">
-      <a class="btn btn-secondary" href="{% url 'home' %}">Назад</a>
-      <a class="btn btn-primary" href="{% url 'instant-message-create' %}">Создать</a>
+      <a class="btn btn-secondary" href="{% url from %}">Назад</a>
     </div>
 
-    <table class="table table-bordered">
-      <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Дата</th>
-        <th scope="col">Сообщение</th>
-      </tr>
-      </thead>
-      <tbody>
-      {% for instant_message in instant_messages %}
-        <tr>
-          <th scope="row">{{ instant_message.id }}</th>
-          <td>{{ instant_message.date }}</td>
-          <td><a href="">Посмотреть</a></td>
-        </tr>
-      {% endfor %}
-      </tbody>
-    </table>
+    <div class="messages w-100 d-flex align-items-start flex-wrap">
+      <div class="card message-card mb-3 mr-3" style="max-width: 460px;">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            {% if message.media %}
+            <img src="{% static message.media %}" class="card-img" alt="">
+            {% else %}
+            <img src="{% static 'informer/images/no-image.png' %}" class="card-img" alt="">
+            {% endif %}
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h5 class="card-title">Текст:</h5>
+              <p class="card-text">{{ message.text }}</p>
+              <p class="card-text">
+                {% if message.url and 'http' in message.url %}
+                  <a href="{{ message.url }}" class="btn btn-primary" target="_blank">Ссылка</a>
+                {% elif message.url %}
+                  <a href="https://{{ message.url }}" class="btn btn-primary" target="_blank">Ссылка</a>
+                {% else %}
+                  <a class="btn btn-secondary not-button">Ссылка</a>
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <a href="" class="btn btn-secondary show-button m-0">Редактировать</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 {% endblock %}

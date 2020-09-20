@@ -32,8 +32,7 @@
           <td>{{ lesson.title }}</td>
           <td>{{ lesson.date }}</td>
           <td>{{ lesson.status }}</td>
-          {#                  <td><a href="{% url 'message-detail' id=lesson.message %}">Посмотреть</a></td>#}
-          <td><a href="">Посмотреть</a></td>
+          <td><a href="{% url 'message-detail' id=lesson.message  %}?next=lesson-list">Посмотреть</a></td>
           {#                  <td><a href="{% url 'timed-message-list' id=lesson.id %}">Посмотреть</a></td>#}
           <td><a href="">Посмотреть</a></td>
           <td><a href="{% url 'lesson-update' id=lesson.id %}">Редактировать</a></td>

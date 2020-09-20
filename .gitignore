@@ -19,3 +19,4 @@ coverage.*
 .idea
 
 /assets/
+/informer/static/informer/media/

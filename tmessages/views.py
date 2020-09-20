@@ -18,7 +18,8 @@ class MessageDetailView(LoginRequiredMixin, View):
         message_data = MessageSerializer(message).data
 
         return render(request, self.template_name, {
-            'message': message_data
+            'message': message_data,
+            'from': request.GET.get('next')
         })
 
 

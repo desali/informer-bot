@@ -23,6 +23,10 @@
 
 }
 
+.message-card {
+    min-width: 256px;
+}
+
 .message-card .image {
 
 }
@@ -77,3 +81,11 @@
     border: 1px solid #ececec;
 }
 /* INSTANT MESSAGES CREATE! */
+
+
+/* !GENERAL */
+.not-button {
+    pointer-events: none;
+    cursor: default;
+}
+/* GENERAL! */

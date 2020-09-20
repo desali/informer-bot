@@ -6,7 +6,7 @@ from projects.models import Project
 class Message(models.Model):
     text = models.CharField(max_length=2000)
     url = models.CharField(max_length=300, null=True, blank=True)
-    media = models.ImageField(upload_to='assets/media/', null=True, blank=True, max_length=255)
+    media = models.ImageField(upload_to='', null=True, blank=True, max_length=255)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='messages')
 
     def __str__(self):
