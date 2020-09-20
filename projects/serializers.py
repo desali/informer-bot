@@ -1,12 +1,12 @@
 from rest_framework import serializers
 
 from projects.models import Project
-from tmessages.serializers import MessageSerializer
+from tmessages.serializers import MessageSerializer, ConfirmMessageSerializer, WelcomeMessageSerializer
 
 
 class ProjectSerializer(serializers.ModelSerializer):
-    confirm_message = MessageSerializer()
-    welcome_message = MessageSerializer()
+    welcome_message = WelcomeMessageSerializer()
+    confirm_message = ConfirmMessageSerializer()
 
     lessons = serializers.SerializerMethodField()
     daily_lessons = serializers.SerializerMethodField()
