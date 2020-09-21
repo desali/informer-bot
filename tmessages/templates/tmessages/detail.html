@@ -8,7 +8,11 @@
     </h2>
 
     <div class="w-100 d-flex justify-content-between mb-3">
-      <a class="btn btn-secondary" href="{% url from %}">Назад</a>
+      {% if id %}
+        <a class="btn btn-secondary" href="{% url from id=id %}">Назад</a>
+      {% else %}
+        <a class="btn btn-secondary" href="{% url from %}">Назад</a>
+      {% endif %}
     </div>
 
     <div class="messages w-100 d-flex align-items-start flex-wrap">

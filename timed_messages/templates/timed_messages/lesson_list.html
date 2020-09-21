@@ -1,0 +1,38 @@
+{% extends "informer/index.html" %}
+{% load static %}
+
+{% block main_content %}
+  <div class="lesson-timed-message-list-page container h-100 d-flex flex-column align-items-center p-4">
+    <h2 class="title mb-4">
+      Запланированные сообщения
+    </h2>
+
+    <div class="w-100 d-flex justify-content-between mb-3">
+      <a class="btn btn-secondary" href="{% url 'lesson-list' %}">Назад</a>
+      <a class="btn btn-primary" href="{% url 'lesson-timed-message-create' id=id %}">Создать</a>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Тайминг</th>
+        <th scope="col">Статус</th>
+        <th scope="col">Сообщение</th>
+        <th scope="col">Удалить</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for timed_message in timed_messages %}
+        <tr>
+          <th scope="row">{{ timed_message.id }}</th>
+          <td>{{ timed_message.timing }}</td>
+          <td>{{ timed_message.status }}</td>
+          <td><a href="{% url 'message-detail' id=timed_message.message  %}?next=lesson-timed-message-list">Посмотреть</a></td>
+          <td><a href="{% url 'lesson-timed-message-delete' id=id tmid=timed_message.id %}">Удалить</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
