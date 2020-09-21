@@ -12,14 +12,12 @@
     </div>
 
     <div class="container h-100 d-flex flex-column align-items-center">
-      <form class="instant-message-create-form" method="POST" enctype="multipart/form-data">
+      <form class="form instant-message-create-form" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
         <div class="form-group">
           <label for="text">Текст сообщения</label>
-          <textarea type="text" class="form-control" id="text" name="text">
-            {{ form.data.text }}
-          </textarea>
+          <textarea type="text" class="form-control" id="text" name="text">{{ form.data.text }}</textarea>
         </div>
         <div class="form-group">
           <label for="url">Ссылка</label>

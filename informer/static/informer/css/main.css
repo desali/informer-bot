@@ -7,10 +7,6 @@
 
 /* !AUTHORIZATION LOGIN */
 .login-form {
-    width: 80%;
-    /*max-height: 400px;*/
-    padding: 30px 40px;
-    border: 1px solid #ececec;
 }
 /* AUTHORIZATION LOGIN! */
 
@@ -39,59 +35,47 @@
 
 /* !LESSONS CREATE */
 .lesson-create-form {
-    width: 80%;
-    /*max-height: 400px;*/
-    padding: 30px 40px;
-    border: 1px solid #ececec;
 }
 /* LESSONS CREATE! */
 
 /* !LESSONS EDIT */
 .lesson-edit-form {
-    width: 80%;
-    /*max-height: 400px;*/
-    padding: 30px 40px;
-    border: 1px solid #ececec;
 }
 /* LESSONS EDIT! */
 
 /* !DAILY LESSONS CREATE */
 .daily-lesson-create-form {
-    width: 80%;
-    /*max-height: 400px;*/
-    padding: 30px 40px;
-    border: 1px solid #ececec;
 }
 /* DAILY LESSONS CREATE! */
 
 /* !DAILY LESSONS EDIT */
 .daily-lesson-edit-form {
-    width: 80%;
-    /*max-height: 400px;*/
-    padding: 30px 40px;
-    border: 1px solid #ececec;
 }
 /* DAILY LESSONS EDIT! */
 
 /* !INSTANT MESSAGES CREATE */
 .instant-message-create-form {
-    width: 80%;
-    /*max-height: 400px;*/
-    padding: 30px 40px;
-    border: 1px solid #ececec;
 }
 /* INSTANT MESSAGES CREATE! */
 
 /* !MESSAGES EDIT */
 .message-edit-form {
+}
+/* MESSAGES EDIT! */
+
+/* !GENERAL */
+.form {
     width: 80%;
     /*max-height: 400px;*/
     padding: 30px 40px;
     border: 1px solid #ececec;
 }
-/* MESSAGES EDIT! */
-
-/* !GENERAL */
+@media screen and (max-width: 426px) {
+  .form {
+      width: 100%;
+      padding: 10px;
+  }
+}
 .not-button {
     pointer-events: none;
     cursor: default;

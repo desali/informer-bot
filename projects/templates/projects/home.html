@@ -13,38 +13,60 @@
       <div class="card message-card mb-3 mr-3" style="max-width: 460px;">
         <div class="row no-gutters">
           <div class="col-md-5">
+            {% if project.welcome_message.message.media %}
+            <img src="{% static project.welcome_message.message.media %}" class="card-img" alt="">
+            {% else %}
             <img src="{% static 'informer/images/no-image.png' %}" class="card-img" alt="">
+            {% endif %}
           </div>
           <div class="col-md-7">
             <div class="card-body">
               <h5 class="card-title">Сообщение приветствие</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-              <p class="card-text"><a href="{{ project.welcome_message }}" class="btn btn-primary">Ссылка</a></p>
+              <p class="card-text">{{ project.welcome_message.message.text }}</p>
+              <p class="card-text">
+                {% if project.welcome_message.message.url and 'http' in project.welcome_message.message.url %}
+                  <a href="{{ project.welcome_message.message.url }}" class="btn btn-primary" target="_blank">Ссылка</a>
+                {% elif project.welcome_message.message.url %}
+                  <a href="https://{{ project.welcome_message.message.url }}" class="btn btn-primary" target="_blank">Ссылка</a>
+                {% else %}
+                  <a class="btn btn-secondary not-button">Ссылка</a>
+                {% endif %}
+              </p>
             </div>
           </div>
         </div>
         <div class="row no-gutters">
-          <a href="" class="btn btn-secondary show-button m-0">Редактировать</a>
+          <a href="{% url 'message-edit' id=project.welcome_message.message.id  %}?next=home" class="btn btn-secondary show-button m-0">Редактировать</a>
         </div>
       </div>
 
-      <div class="card message-card mb-3" style="max-width: 460px;">
+      <div class="card message-card mb-3 mr-3" style="max-width: 460px;">
         <div class="row no-gutters">
           <div class="col-md-5">
+            {% if project.confirm_message.message.media %}
+            <img src="{% static project.confirm_message.message.media %}" class="card-img" alt="">
+            {% else %}
             <img src="{% static 'informer/images/no-image.png' %}" class="card-img" alt="">
+            {% endif %}
           </div>
           <div class="col-md-7">
             <div class="card-body">
               <h5 class="card-title">Сообщение подтверждение</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-              <p class="card-text"><a href="{{ project.confirm_message }}" class="btn btn-primary">Ссылка</a></p>
+              <p class="card-text">{{ project.confirm_message.message.text }}</p>
+              <p class="card-text">
+                {% if project.confirm_message.message.url and 'http' in project.confirm_message.message.url %}
+                  <a href="{{ project.confirm_message.message.url }}" class="btn btn-primary" target="_blank">Ссылка</a>
+                {% elif project.confirm_message.message.url %}
+                  <a href="https://{{ project.confirm_message.message.url }}" class="btn btn-primary" target="_blank">Ссылка</a>
+                {% else %}
+                  <a class="btn btn-secondary not-button">Ссылка</a>
+                {% endif %}
+              </p>
             </div>
           </div>
         </div>
         <div class="row no-gutters">
-          <a href="" class="btn btn-secondary show-button m-0">Редактировать</a>
+          <a href="{% url 'message-edit' id=project.confirm_message.message.id  %}?next=home" class="btn btn-secondary show-button m-0">Редактировать</a>
         </div>
       </div>
     </div>

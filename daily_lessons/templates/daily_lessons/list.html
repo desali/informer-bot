@@ -34,8 +34,7 @@
           <td>{{ daily_lesson.day }}</td>
           <td>{{ daily_lesson.hour }}</td>
           <td>{{ daily_lesson.status }}</td>
-          {#                  <td><a href="{% url 'message-detail' id=daily_lesson.message %}">Посмотреть</a></td>#}
-          <td><a href="">Посмотреть</a></td>
+          <td><a href="{% url 'message-detail' id=daily_lesson.message %}?next=daily-lesson-list">Посмотреть</a></td>
           {#                  <td><a href="{% url 'timed-message-list' id=daily_lesson.id %}">Посмотреть</a></td>#}
           <td><a href="">Посмотреть</a></td>
           <td><a href="{% url 'daily-lesson-update' id=daily_lesson.id %}">Редактировать</a></td>
