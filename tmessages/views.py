@@ -20,7 +20,7 @@ class MessageDetailView(LoginRequiredMixin, View):
         if request.GET.get('next') == 'lesson-timed-message-list':
             lesson_id = message.lesson_timed.lesson.id
         elif request.GET.get('next') == 'daily-lesson-timed-message-list':
-            lesson_id = message.daily_lesson_timed.lesson.id
+            lesson_id = message.daily_lesson_timed.daily_lesson.id
         else:
             lesson_id = None
 
@@ -55,7 +55,7 @@ class MessageUpdateView(LoginRequiredMixin, View):
         if request.GET.get('next') == 'lesson-timed-message-list':
             lesson_id = message.lesson_timed.lesson.id
         elif request.GET.get('next') == 'daily-lesson-timed-message-list':
-            lesson_id = message.daily_lesson_timed.lesson.id
+            lesson_id = message.daily_lesson_timed.daily_lesson.id
         else:
             lesson_id = None
 
