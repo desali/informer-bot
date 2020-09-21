@@ -28,7 +28,8 @@
           <th scope="row">{{ timed_message.id }}</th>
           <td>{{ timed_message.timing }}</td>
           <td>{{ timed_message.status }}</td>
-          <td><a href="{% url 'message-detail' id=timed_message.message  %}?next=daily-lesson-timed-message-list">Посмотреть</a></td>
+          <td><a href="{% url 'message-detail' id=timed_message.message %}?next=daily-lesson-timed-message-list">Посмотреть</a>
+          </td>
           <td><a href="{% url 'daily-lesson-timed-message-delete' id=id tmid=timed_message.id %}">Удалить</a></td>
         </tr>
       {% endfor %}

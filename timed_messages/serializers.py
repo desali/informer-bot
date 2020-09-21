@@ -1,7 +1,6 @@
 from rest_framework import serializers
 
 from timed_messages.models import LessonTimedMessage, DailyLessonTimedMessage
-from tmessages.serializers import MessageSerializer
 
 
 class LessonTimedMessageListSerializer(serializers.ModelSerializer):

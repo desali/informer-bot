@@ -20,17 +20,17 @@ from django.urls import path, include
 from informer import settings
 
 urlpatterns = [
-    path('', include('projects.urls')),
+                  path('', include('projects.urls')),
 
-    path('auth/', include('authorization.urls')),
-    path('admin/', include('admins.urls')),
-    path('client/', include('clients.urls')),
-    path('core/', include('core.urls')),
-    path('instant_message/', include('instant_messages.urls')),
-    path('lesson/', include('lessons.urls')),
-    path('daily_lesson/', include('daily_lessons.urls')),
-    path('timed_message/', include('timed_messages.urls')),
-    path('message/', include('tmessages.urls')),
+                  path('auth/', include('authorization.urls')),
+                  path('admin/', include('admins.urls')),
+                  path('client/', include('clients.urls')),
+                  path('core/', include('core.urls')),
+                  path('instant_message/', include('instant_messages.urls')),
+                  path('lesson/', include('lessons.urls')),
+                  path('daily_lesson/', include('daily_lessons.urls')),
+                  path('timed_message/', include('timed_messages.urls')),
+                  path('message/', include('tmessages.urls')),
 
-    path('adminka/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  path('adminka/', admin.site.urls),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

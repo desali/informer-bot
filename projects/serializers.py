@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from projects.models import Project
-from tmessages.serializers import MessageSerializer, ConfirmMessageSerializer, WelcomeMessageSerializer
+from tmessages.serializers import ConfirmMessageSerializer, WelcomeMessageSerializer
 
 
 class ProjectSerializer(serializers.ModelSerializer):

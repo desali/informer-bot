@@ -8,6 +8,7 @@
 /* !AUTHORIZATION LOGIN */
 .login-form {
 }
+
 /* AUTHORIZATION LOGIN! */
 
 /* !PROJECTS HOME */
@@ -36,31 +37,37 @@
 /* !LESSONS CREATE */
 .lesson-create-form {
 }
+
 /* LESSONS CREATE! */
 
 /* !LESSONS EDIT */
 .lesson-edit-form {
 }
+
 /* LESSONS EDIT! */
 
 /* !DAILY LESSONS CREATE */
 .daily-lesson-create-form {
 }
+
 /* DAILY LESSONS CREATE! */
 
 /* !DAILY LESSONS EDIT */
 .daily-lesson-edit-form {
 }
+
 /* DAILY LESSONS EDIT! */
 
 /* !INSTANT MESSAGES CREATE */
 .instant-message-create-form {
 }
+
 /* INSTANT MESSAGES CREATE! */
 
 /* !MESSAGES EDIT */
 .message-edit-form {
 }
+
 /* MESSAGES EDIT! */
 
 /* !GENERAL */
@@ -70,18 +77,22 @@
     padding: 30px 40px;
     border: 1px solid #ececec;
 }
+
 @media screen and (max-width: 426px) {
-  .form {
-      width: 100%;
-      padding: 10px;
-  }
+    .form {
+        width: 100%;
+        padding: 10px;
+    }
 }
+
 .not-button {
     pointer-events: none;
     cursor: default;
 }
+
 .message-media {
     width: 100%;
     max-width: 256px;
 }
+
 /* GENERAL! */

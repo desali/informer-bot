@@ -43,13 +43,11 @@ class InstantMessageCreateView(LoginRequiredMixin, View):
         request.POST._mutable = True
 
         instant_message_form = InstantMessageCreateForm(request.POST, request.FILES)
-        print(instant_message_form)
 
         if instant_message_form.is_valid():
             message_serializer = MessageCreateSerializer(data=instant_message_form.cleaned_data)
             assert message_serializer.is_valid()
             message = message_serializer.save()
-            print(message_serializer.data)
 
             instant_message_serializer = InstantMessageCreateSerializer(data=instant_message_form.cleaned_data)
             assert instant_message_serializer.is_valid(raise_exception=True)

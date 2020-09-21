@@ -1,8 +1,6 @@
-from django import forms
 from django.forms import ModelForm
 
 from daily_lessons.models import DailyLesson
-from lessons.models import Lesson
 
 
 class DailyLessonCreateForm(ModelForm):

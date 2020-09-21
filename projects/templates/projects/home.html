@@ -14,9 +14,9 @@
         <div class="row no-gutters">
           <div class="col-md-5">
             {% if project.welcome_message.message.media %}
-            <img src="{% static project.welcome_message.message.media %}" class="card-img" alt="">
+              <img src="{% static project.welcome_message.message.media %}" class="card-img" alt="">
             {% else %}
-            <img src="{% static 'informer/images/no-image.png' %}" class="card-img" alt="">
+              <img src="{% static 'informer/images/no-image.png' %}" class="card-img" alt="">
             {% endif %}
           </div>
           <div class="col-md-7">
@@ -36,7 +36,8 @@
           </div>
         </div>
         <div class="row no-gutters">
-          <a href="{% url 'message-edit' id=project.welcome_message.message.id  %}?next=home" class="btn btn-secondary show-button m-0">Редактировать</a>
+          <a href="{% url 'message-edit' id=project.welcome_message.message.id %}?next=home"
+             class="btn btn-secondary show-button m-0">Редактировать</a>
         </div>
       </div>
 
@@ -44,9 +45,9 @@
         <div class="row no-gutters">
           <div class="col-md-5">
             {% if project.confirm_message.message.media %}
-            <img src="{% static project.confirm_message.message.media %}" class="card-img" alt="">
+              <img src="{% static project.confirm_message.message.media %}" class="card-img" alt="">
             {% else %}
-            <img src="{% static 'informer/images/no-image.png' %}" class="card-img" alt="">
+              <img src="{% static 'informer/images/no-image.png' %}" class="card-img" alt="">
             {% endif %}
           </div>
           <div class="col-md-7">
@@ -66,7 +67,8 @@
           </div>
         </div>
         <div class="row no-gutters">
-          <a href="{% url 'message-edit' id=project.confirm_message.message.id  %}?next=home" class="btn btn-secondary show-button m-0">Редактировать</a>
+          <a href="{% url 'message-edit' id=project.confirm_message.message.id %}?next=home"
+             class="btn btn-secondary show-button m-0">Редактировать</a>
         </div>
       </div>
     </div>

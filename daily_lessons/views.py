@@ -7,6 +7,7 @@ from daily_lessons.forms import DailyLessonCreateForm, DailyLessonEditForm
 from daily_lessons.models import DailyLesson
 from daily_lessons.serializers import DailyLessonListSerializer, DailyLessonEditSerializer
 from projects.models import Project
+from tmessages.models import Message
 
 
 class DailyLessonListView(LoginRequiredMixin, View):
@@ -54,6 +55,12 @@ class DailyLessonCreateView(LoginRequiredMixin, View):
         lesson_form = DailyLessonCreateForm(request.POST)
 
         if lesson_form.is_valid():
+            message = Message()
+            message.text = "Test title"
+            message.project = request.user.project
+            message.save()
+
+            lesson_form.instance.message = message
             daily_lesson = lesson_form.save()
             if daily_lesson:
                 return redirect('daily-lesson-list')

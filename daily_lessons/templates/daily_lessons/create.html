@@ -24,7 +24,8 @@
           <select class="form-control" id="hour" name="hour">
             <option value="" selected>---------</option>
             {% for hour in hours %}
-              <option value="{{ hour.id }}" {% if hour.id == form.data.hour %} selected{% endif %}>{{ hour.title }}</option>
+              <option value="{{ hour.id }}" {% if hour.id == form.data.hour %}
+                      selected{% endif %}>{{ hour.title }}</option>
             {% endfor %}
           </select>
         </div>

@@ -102,7 +102,6 @@ class DailyLessonTimedMessageListView(LoginRequiredMixin, View):
         timed_messages = lesson.timed_messages.order_by('timing')
         timed_messages_data = DailyLessonTimedMessageListSerializer(timed_messages, many=True).data
 
-        print(timed_messages_data)
         return render(request, self.template_name, {
             'timed_messages': timed_messages_data,
             'id': lesson.id
@@ -135,7 +134,6 @@ class DailyLessonTimedMessageCreateView(LoginRequiredMixin, View):
         request.POST._mutable = True
 
         timed_message_form = DailyLessonTimedMessageCreateForm(request.POST)
-        print(timed_message_form)
 
         if timed_message_form.is_valid():
             message = Message()

@@ -6,6 +6,7 @@ from lessons.forms import LessonCreateForm, LessonEditForm
 from lessons.models import Lesson
 from lessons.serializers import LessonListSerializer, LessonEditSerializer
 from projects.models import Project
+from tmessages.models import Message
 
 
 class LessonListView(LoginRequiredMixin, View):
@@ -43,6 +44,12 @@ class LessonCreateView(LoginRequiredMixin, View):
         lesson_form = LessonCreateForm(request.POST)
 
         if lesson_form.is_valid():
+            message = Message()
+            message.text = "Test title"
+            message.project = request.user.project
+            message.save()
+
+            lesson_form.instance.message = message
             lesson = lesson_form.save()
             if lesson:
                 return redirect('lesson-list')

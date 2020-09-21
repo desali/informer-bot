@@ -1,6 +1,5 @@
 from rest_framework import serializers
 
-from clients.models import Client
 from instant_messages.models import InstantMessage
 
 

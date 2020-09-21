@@ -13,7 +13,8 @@ class LessonTimedMessage(models.Model):
         (3, 'Sent'),
     )
 
-    message = models.OneToOneField(Message, on_delete=models.CASCADE, related_name='lesson_timed', null=True, blank=True)
+    message = models.OneToOneField(Message, on_delete=models.CASCADE, related_name='lesson_timed', null=True,
+                                   blank=True)
     timing = models.ForeignKey(Timing, on_delete=models.DO_NOTHING)
     status = models.IntegerField(choices=STATUS, default=1)
 
@@ -34,7 +35,8 @@ class DailyLessonTimedMessage(models.Model):
         (3, 'Sent'),
     )
 
-    message = models.OneToOneField(Message, on_delete=models.CASCADE, related_name='daily_lesson_timed', null=True, blank=True)
+    message = models.OneToOneField(Message, on_delete=models.CASCADE, related_name='daily_lesson_timed', null=True,
+                                   blank=True)
     timing = models.ForeignKey(Timing, on_delete=models.DO_NOTHING)
     status = models.IntegerField(choices=STATUS, default=1)
 
