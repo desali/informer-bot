@@ -15,7 +15,7 @@
     <table class="table table-bordered">
       <thead>
       <tr>
-        <th scope="col">ID</th>
+        <th scope="col">N</th>
         <th scope="col">Название</th>
         <th scope="col">День</th>
         <th scope="col">Час</th>
@@ -29,7 +29,7 @@
       <tbody>
       {% for daily_lesson in daily_lessons %}
         <tr>
-          <th scope="row">{{ daily_lesson.id }}</th>
+          <th scope="row">{{ forloop.counter }}</th>
           <td>{{ daily_lesson.title }}</td>
           <td>{{ daily_lesson.day }}</td>
           <td>{{ daily_lesson.hour }}</td>

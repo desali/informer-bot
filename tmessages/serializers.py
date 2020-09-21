@@ -12,7 +12,7 @@ class MessageSerializer(serializers.ModelSerializer):
 class MessageCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
-        fields = ['text', 'url', 'media']
+        fields = ['text', 'url', 'media', 'project']
 
 
 class MessageEditSerializer(serializers.ModelSerializer):

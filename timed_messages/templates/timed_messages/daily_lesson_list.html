@@ -15,7 +15,7 @@
     <table class="table table-bordered">
       <thead>
       <tr>
-        <th scope="col">ID</th>
+        <th scope="col">N</th>
         <th scope="col">Тайминг</th>
         <th scope="col">Статус</th>
         <th scope="col">Сообщение</th>
@@ -25,7 +25,7 @@
       <tbody>
       {% for timed_message in timed_messages %}
         <tr>
-          <th scope="row">{{ timed_message.id }}</th>
+          <th scope="row">{{ forloop.counter }}</th>
           <td>{{ timed_message.timing }}</td>
           <td>{{ timed_message.status }}</td>
           <td><a href="{% url 'message-detail' id=timed_message.message %}?next=daily-lesson-timed-message-list">Посмотреть</a>

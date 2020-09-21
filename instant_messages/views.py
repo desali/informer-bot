@@ -39,7 +39,6 @@ class InstantMessageCreateView(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         request.POST._mutable = True
         request.POST['project'] = request.user.project.id
-        request.POST['date'] = timezone.now()
         request.POST._mutable = True
 
         instant_message_form = InstantMessageCreateForm(request.POST, request.FILES)

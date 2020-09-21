@@ -15,7 +15,7 @@
     <table class="table table-bordered">
       <thead>
       <tr>
-        <th scope="col">ID</th>
+        <th scope="col">N</th>
         <th scope="col">Название</th>
         <th scope="col">Дата</th>
         <th scope="col">Статус</th>
@@ -28,7 +28,7 @@
       <tbody>
       {% for lesson in lessons %}
         <tr>
-          <th scope="row">{{ lesson.id }}</th>
+          <th scope="row">{{ forloop.counter }}</th>
           <td>{{ lesson.title }}</td>
           <td>{{ lesson.date }}</td>
           <td>{{ lesson.status }}</td>
