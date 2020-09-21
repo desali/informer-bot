@@ -1,6 +1,6 @@
 from django.db import models
 
-from core.models import Hour
+from core.models import Hour, Minute
 from projects.models import Project
 from tmessages.models import Message
 
@@ -14,10 +14,11 @@ class DailyLesson(models.Model):
 
     title = models.CharField(max_length=200)
     day = models.IntegerField()
-    hour = models.ForeignKey(Hour, on_delete=models.DO_NOTHING)
     message = models.OneToOneField(Message, on_delete=models.CASCADE, null=True, blank=True)
     status = models.IntegerField(choices=STATUS, default=1)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='daily_lessons')
+    hour = models.ForeignKey(Hour, on_delete=models.DO_NOTHING)
+    minute = models.ForeignKey(Minute, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.title
