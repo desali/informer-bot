@@ -2,24 +2,26 @@
 {% load static %}
 
 {% block main_content %}
-  <div class="instant-message-create-page container h-100 d-flex flex-column align-items-center p-4">
+  <div class="message-edit-page container h-100 d-flex flex-column align-items-center p-4">
     <h2 class="title mb-4">
-      Создание немедленного сообщения
+       Редактирование сообщения
     </h2>
 
     <div class="w-100 d-flex justify-content-between mb-3">
-      <a class="btn btn-secondary" href="{% url 'instant-message-list' %}">Назад</a>
+      {% if from == 'home' %}
+        <a class="btn btn-secondary" href="{% url 'home' %}">Назад</a>
+      {% else %}
+        <a class="btn btn-secondary" href="{% url 'message-detail' id=form.data.id %}?next={{ from }}">Назад</a>
+      {% endif %}
     </div>
 
     <div class="container h-100 d-flex flex-column align-items-center">
-      <form class="instant-message-create-form" method="POST" enctype="multipart/form-data">
+      <form class="message-edit-form" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
         <div class="form-group">
           <label for="text">Текст сообщения</label>
-          <textarea type="text" class="form-control" id="text" name="text">
-            {{ form.data.text }}
-          </textarea>
+          <textarea type="text" class="form-control" id="text" name="text">{{ form.data.text }}</textarea>
         </div>
         <div class="form-group">
           <label for="url">Ссылка</label>
@@ -28,9 +30,11 @@
         <div class="form-group">
           <label for="media">Медиа</label>
           <input type="file" class="form-control" name="media" accept="image/*" id="media">
+          <img src="{{ form.data.media }}" alt="Media" class="message-media mt-2">
         </div>
 
-        <button type="submit" class="btn btn-primary">Создать</button>
+        <input type="text" name="next" value="{{ from }}" hidden>
+        <button type="submit" class="btn btn-primary">Редактировать</button>
       </form>
     </div>
   </div>

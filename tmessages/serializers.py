@@ -15,6 +15,12 @@ class MessageCreateSerializer(serializers.ModelSerializer):
         fields = ['text', 'url', 'media']
 
 
+class MessageEditSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Message
+        fields = ['id', 'text', 'url', 'media']
+
+
 class WelcomeMessageSerializer(serializers.ModelSerializer):
     message = MessageSerializer()
 
